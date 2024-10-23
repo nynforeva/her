@@ -1,0 +1,23 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int max(int a, int b, int c) {
+    int colors[3] = { a, b, c };
+    sort(colors, colors + 3, greater<int>());
+ 
+    int good = 0;
+    while (colors[1] > 0 && colors[0] > 0) {
+        
+        good++;
+        colors[0]--;
+        colors[1]--;
+        
+        sort(colors, colors + 3, greater<int>());}
+    return good;}
+int main() {
+    int q;
+    cin >> q;
+    while (q--) {
+        int a, b, c;
+        cin >> a >> b >> c;
+        cout << max(a, b, c) << endl;}}
